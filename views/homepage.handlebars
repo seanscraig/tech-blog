@@ -1,4 +1,4 @@
-<!-- Loop over each object in the projects array -->
+{{!-- <!-- Loop over each object in the projects array -->
 {{#each projects as |project| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
@@ -21,4 +21,38 @@
     </p>
   </div>
 </div>
+{{/each}} --}}
+
+{{#each posts as |post|}}
+<div class="card">
+  <div class="card-header">
+    {{user.user_name}} at {{format_date post.created_at}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.body}}</p>
+  </div>
+</div>
 {{/each}}
+
+
+
+{{!-- {{#each posts as |post|}}
+  <div class="row align-center mb-5 card">
+    <div class="col-12 col-md-6 col-lg-12 card-header">
+      <h2>{{post.title}}
+        by:
+        {{user.user_name}}
+        at
+        {{format_date post.created_at}}</h2>
+      <div class="card-body">
+        <p>{{post.body}}</p>
+      </div>
+    </div> --}}
+    {{!-- <div class="col-12 col-md-6 col-lg-12">
+    {{#each comments as |comment|}}
+    <p>{{comment.body}} id: {{comment.user_id}} name: {{user.user_name}}</p>
+    {{/each}}
+  </div> --}}
+  {{!-- </div>
+{{/each}} --}}
