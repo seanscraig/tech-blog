@@ -1,0 +1,45 @@
+<div class="post">
+  {{!-- <div class="card">
+    <div class="card-header flex-row justify-space-between">
+      {{user.user_name}}
+      at
+      {{format_date post.created_at}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.body}}</p>
+    </div>
+  </div> --}}
+
+  {{> post-details post}}
+  {{!-- {{> comments post.comments }} --}}
+  {{!-- {{#if post.Comments}} --}}
+    <section class="card">
+      <div class="card-header">
+        <h3>Comments</h3>
+      </div>
+      <div class="card-body">
+        {{#each post.comments}}
+          <div>
+            <p>{{body}} </p>
+            <p> - {{user.user_name}} on {{format_date created_at}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+  {{!-- {{/if}} --}}
+  {{#if logged_in}}
+  <form id="new-comment-form" class="card">
+    <div class="card-header">
+      <h3>Add a new Comment</h3>
+    </div>
+    <div class="card-body">
+      <input type="hidden" name="post-id" value="{{post.id}}" />
+      <label class="form-label" for="comment-body">Comment</label>
+      <textarea name="comment-body" class="form-input"></textarea>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <script src="/js/comment.js"></script>
+  {{/if}}
+</div>

@@ -23,19 +23,11 @@
 </div>
 {{/each}} --}}
 
-{{#each posts as |post|}}
-<div class="card">
-  <div class="card-header">
-    {{user.user_name}} at {{format_date post.created_at}}
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{post.title}}</h5>
-    <p class="card-text">{{post.body}}</p>
-  </div>
+<div class="posts">
+  {{#each posts as |post|}}
+    {{> post-details post}}
+  {{/each}}
 </div>
-{{/each}}
-
-
 
 {{!-- {{#each posts as |post|}}
   <div class="row align-center mb-5 card">
@@ -49,10 +41,10 @@
         <p>{{post.body}}</p>
       </div>
     </div> --}}
-    {{!-- <div class="col-12 col-md-6 col-lg-12">
+{{!-- <div class="col-12 col-md-6 col-lg-12">
     {{#each comments as |comment|}}
     <p>{{comment.body}} id: {{comment.user_id}} name: {{user.user_name}}</p>
     {{/each}}
   </div> --}}
-  {{!-- </div>
+{{!-- </div>
 {{/each}} --}}

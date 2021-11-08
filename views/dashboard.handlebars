@@ -1,0 +1,11 @@
+{{#if posts.length}}
+<div>
+  <h2>Your Posts</h2>
+  {{#each posts as |post|}}
+    {{> dashboard-post-details post}}
+  {{/each}}
+</div>
+{{/if}}
+
+<button type="submit" class="btn"><a href="/dashboard/new">+ New Post</a></button>
+<script src="/js/dashboard.js"></script>

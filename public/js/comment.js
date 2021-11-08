@@ -1,0 +1,1 @@
+console.log("comment js is connected but needs to be worked on");

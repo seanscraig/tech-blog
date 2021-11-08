@@ -1,0 +1,1 @@
+console.log("delete-post js is connected but needs to be worked on");
