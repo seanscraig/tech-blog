@@ -16,7 +16,6 @@ User.hasMany(Comment, {
   onDelete: "CASCADE"
 })
 
-//before
 Post.belongsTo(User, {
   foreignKey: "user_id",
   onDelete: "CASCADE",

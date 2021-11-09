@@ -26,10 +26,10 @@ router.put('/:id', withAuth, async (req, res) => {
         id: req.params.id,
       }
     });
-    if (!res.affectedRows) {
-      res.status(404).json({ message: 'No post found with id'});
-      return;
-    }
+    // if (!dbPostData[0]) {
+    //   res.status(404).json({ message: 'No post found with id'});
+    //   return;
+    // }
     res.json(dbPostData);
   } catch (err) {
     res.status(500).json(err);
@@ -45,10 +45,10 @@ router.delete('/:id', withAuth, async (req, res) => {
       },
     });
 
-    if (!res.affectedRows) {
-      res.status(404).json({ message: 'No post found with this id!' });
-      return;
-    }
+    // if (!res.affectedRows) {
+    //   res.status(404).json({ message: 'No post found with this id!' });
+    //   return;
+    // }
 
     res.status(200).json(postData);
   } catch (err) {
