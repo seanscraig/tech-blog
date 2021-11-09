@@ -1,5 +1,3 @@
-
-
 const createNewPost = async (event) => {
   event.preventDefault();
 

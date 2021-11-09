@@ -1,20 +1,20 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-router.get("/", async (req, res) => {
-  try {
-    const dbUserData = await User.findAll({
-      order: [["user_name", "ASC"]],
-      attributes: { exclude: ["password"] },
-    });
+// router.get("/", async (req, res) => {
+//   try {
+//     const dbUserData = await User.findAll({
+//       order: [["user_name", "ASC"]],
+//       attributes: { exclude: ["password"] },
+//     });
 
-    const users = dbUserData.map((user) => user.get({ plain: true }));
+//     const users = dbUserData.map((user) => user.get({ plain: true }));
 
-    res.status(200).json(users);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.status(200).json(users);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.post("/", async (req, res) => {
   try {

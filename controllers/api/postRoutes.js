@@ -1,8 +1,8 @@
-const router = require('express').Router();
-const { Post, User, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
+const router = require("express").Router();
+const { Post, User, Comment } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.post('/', withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
       title: req.body.postTitle,
@@ -15,28 +15,32 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', withAuth, async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   try {
-    const dbPostData = Post.update({
-      title: req.body.postTitle,
-      body: req.body.postBody,
-    },
-    {
-      where: {
-        id: req.params.id,
+    const dbPostData = Post.update(
+      {
+        title: req.body.postTitle,
+        body: req.body.postBody,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
       }
-    });
+    );
+
     // if (!dbPostData[0]) {
     //   res.status(404).json({ message: 'No post found with id'});
     //   return;
     // }
+
     res.json(dbPostData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
