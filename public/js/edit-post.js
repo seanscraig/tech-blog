@@ -1,1 +1,32 @@
-console.log("edit-post js is connected but needs to be worked on");
+const editPostFormHandler = async (event) => {
+  event.preventDefault();
+
+  const postTitle = document.querySelector("#edit-post-title").value.trim();
+  const postBody = document.querySelector("#edit-post-body").value.trim();
+
+  console.log(postTitle)
+  console.log(postBody)
+
+  const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+
+  const response = await fetch(`/api/posts/${id}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      id,
+      postTitle,
+      postBody
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+    alert("post has been updated successfully");
+    document.location.replace("/dashboard");
+  } else {
+    alert(response.statusText);
+  }
+}
+
+document.
+  querySelector("#edit-post-form")
+  addEventListener("submit", editPostFormHandler);

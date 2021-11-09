@@ -5,11 +5,10 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
-      title: req.body.title,
-      body: req.body.body,
+      title: req.body.postTitle,
+      body: req.body.postBody,
       user_id: req.session.user_id,
     });
-    console.log(newPost);
     res.status(200).json(newPost);
   } catch (err) {
     res.status(500).json(err);
@@ -19,15 +18,15 @@ router.post('/', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const dbPostData = Post.update({
-      title: req.body.title,
-      body: req.body.body,
+      title: req.body.postTitle,
+      body: req.body.postBody,
     },
     {
       where: {
         id: req.params.id,
       }
     });
-    if (!dbPostData){
+    if (!res.affectedRows) {
       res.status(404).json({ message: 'No post found with id'});
       return;
     }
@@ -46,7 +45,7 @@ router.delete('/:id', withAuth, async (req, res) => {
       },
     });
 
-    if (!postData) {
+    if (!res.affectedRows) {
       res.status(404).json({ message: 'No post found with this id!' });
       return;
     }

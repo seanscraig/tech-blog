@@ -14,6 +14,8 @@
   Here is a wire frame I created to structure each page.
   ![Simple webpage layouts that show where each link goes to](./assets/Tech-Blog-Wireframe.png)
 
+  It is a live version is deployed at https://sheltered-falls-13884.herokuapp.com
+
   ## Table of Contents
   - [Installation](#installation)
   - [Usage](#usage)

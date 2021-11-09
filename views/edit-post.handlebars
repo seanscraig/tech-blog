@@ -7,17 +7,19 @@
     <input
       type="text"
       name="post-title"
+      id="edit-post-title"
       value="{{post.title}}"
       class="form-input"
     />
     <label for="content" class="form-label">Content</label>
-    <textarea
+    <input
       name="post-body"
+      id="edit-post-body"
       class="form-input"
       value="{{post.body}}"
-    ></textarea>
+    />
     <button type="submit" class="btn">Update Post</button>
-    <button type="button" class="btn btn-danger">Delete Post</button>
+    <button type="button" class="btn btn-danger" id="delete-post-btn">Delete Post</button>
   </form>
 </div>
 

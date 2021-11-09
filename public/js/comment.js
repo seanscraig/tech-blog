@@ -15,7 +15,7 @@ const commentFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // alert("Comment posted successfully");
+      alert("Comment posted successfully");
       document.location.reload();
     }
     else {
