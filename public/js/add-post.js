@@ -3,8 +3,8 @@
 const createNewPost = async (event) => {
   event.preventDefault();
 
-  const postBody = document.querySelector("#post-body");
-  const postTitle = document.querySelector("#post-title");
+  const postBody = document.querySelector("#post-body").value;
+  const postTitle = document.querySelector("#post-title").value;
 
   if (postTitle && postBody){
     const response = await fetch(`/api/posts`, { 
@@ -14,6 +14,7 @@ const createNewPost = async (event) => {
     });
 
     if (response.ok) {
+      alert("new post has been added");
       document.location.replace("/dashboard");
     }
     else {
@@ -24,5 +25,5 @@ const createNewPost = async (event) => {
 }
 
 document
-  .querySelector(".btn")
+  .querySelector("#new-post-form")
   .addEventListener("submit", createNewPost);

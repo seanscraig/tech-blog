@@ -78,41 +78,6 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
-// router.get("/", withAuth, async (req, res) => {
-//   try {
-//     const dbPostData = await Post.findAll({
-//       where: {
-//         id: req.session.id,
-//       },
-//       attributes: ["id", "title", "body", "created_at"],
-//       include: [
-//         {
-//           model: Comment,
-//           attributes: ["id", "body", "user_id", "post_id", "created_at"],
-//           include: {
-//             model: User,
-//             attributes: ["user_name"],
-//           },
-//         },
-//         {
-//           model: User,
-//           attributes: ["user_name"],
-//         },
-//       ],
-//     });
-
-//     const posts = dbPostData.map((post) => post.get({ plain: true }));
-
-//     console.log(posts);
-//     res.render("dashboard", {
-//       posts,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
