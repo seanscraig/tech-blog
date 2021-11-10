@@ -6,12 +6,15 @@
   A CMS-style blog site similar to a Wordpress site, where users can publish their blog posts and comment on other users' posts as well.
 
   Here is an ERD I created to structure the database.
+  
   ![Tables with field names and link to each other with arrows](./assets/Tech-Blog-ERD.png)
 
   This is a flow chart I created to structure the flow of the web site.
+  
   ![Boxes with names linked together by arrows](./assets/Tech-Blog-Flow-Chart.png)
 
   Here is a wire frame I created to structure each page.
+  
   ![Simple webpage layouts that show where each link goes to](./assets/Tech-Blog-Wireframe.png)
 
   It is a live version is deployed at https://sheltered-falls-13884.herokuapp.com
