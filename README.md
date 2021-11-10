@@ -8,7 +8,7 @@
   Here is an ERD I created to structure the database.
   ![Tables with field names and link to each other with arrows](./assets/Tech-Blog-ERD.png)
 
-  Here is a flow chart I created to structure the flow of the web site.
+  This is a flow chart I created to structure the flow of the web site.
   ![Boxes with names linked together by arrows](./assets/Tech-Blog-Flow-Chart.png)
 
   Here is a wire frame I created to structure each page.
