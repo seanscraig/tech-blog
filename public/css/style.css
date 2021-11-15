@@ -1,4 +1,8 @@
-.card-header a{
+.card a{
   color: #fff;
   text-decoration: none;
+}
+
+.card p{
+  color: black;
 }
