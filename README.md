@@ -17,7 +17,7 @@
   
   ![Simple webpage layouts that show where each link goes to](./assets/Tech-Blog-Wireframe.png)
 
-  It is a live version is deployed at https://sheltered-falls-13884.herokuapp.com
+  It is a live version is deployed at https://sean-tech-blog.herokuapp.com
 
   ## Table of Contents
   - [Installation](#installation)
